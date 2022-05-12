@@ -1,0 +1,45 @@
+pipeline {
+
+    parameters {
+        string(name: 'environment', defaultValue: 'terraform', description: 'Workspace/environment file to use for deployment')
+        booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
+
+    }
+
+
+     environment {
+        AWS_ACCESS_KEY_ID     = credentials('access_key')
+        AWS_SECRET_ACCESS_KEY = credentials('secret_key')
+    }
+
+   agent  any
+        options {
+                timestamps ()
+                ansiColor('xterm')
+            }
+    stages {
+        stage('checkout') {
+            steps {
+                 script{
+                        dir("terraform")
+                        {
+                            git "https://github.com/SpoorthyNandakumar/Terraform_codes.git"
+                        }
+                    }
+                }
+            }
+
+       stage('terraform Init'){
+            steps{
+               powershell 'terraform init'
+            }
+        }
+
+        stage('Apply') {
+            steps {
+                powershell "pwd;cd terraform/Terraform_codes ; terraform apply -auto-approve"
+            }
+        }
+    }
+
+  }
