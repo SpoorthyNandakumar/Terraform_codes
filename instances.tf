@@ -2,7 +2,6 @@ resource "aws_instance" "EC2-1" {
   ami           = var.ami-Practice1
   instance_type = var.instance_type
   availability_zone = var.availability_zone-Practice1
-  user_data_replace_on_change = true
   #user_data = file("./IIS_installation-1.ps1")
   #user_data = file("${path.module}/IIS_installation-1.ps1")
   /*user_data = <<EOF
@@ -25,7 +24,6 @@ resource "aws_instance" "EC2-2" {
   ami           = var.ami-Practice2
   instance_type = var.instance_type
   availability_zone = var.availability_zone-Practice2
-  user_data_replace_on_change = true
   #user_data = file("./IIS_installation-2.ps1")
   #user_data = file("${path.module}/IIS_installation-2.ps1")
 
