@@ -13,6 +13,21 @@ resource "aws_iam_role" "test_role" {
       "Effect": "Allow",
       "Sid": ""
     }
+    "Statement": {
+    "Effect": "Allow",
+    "Action": "iam:CreateUser",
+    "Resource": "*"
+  }
+    
+    
+    {
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": "iam:*AccessKey*",
+    "Resource": "arn:aws:iam::792820380616:user/${aws:username}"
+  }
+}
   ]
 }
 EOF
