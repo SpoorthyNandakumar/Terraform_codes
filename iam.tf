@@ -50,3 +50,28 @@ resource "aws_iam_role_policy" "test_policy" {
 }
 EOF
 }
+
+policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+          "iam:GetRole",
+          "iam:GetRolePolicy",
+          "iam:PassRole",
+          "iam:DetachRolePolicy",
+          "iam:DeleteRolePolicy",
+          "iam:DeleteRole",
+          "iam:CreateRole",
+          "iam:AttachRolePolicy",
+          "iam:PutRolePolicy"
+      ],
+      "Resource": "arn:aws:iam::*:role/*"
+    }
+  ]
+}
+EOF
+}
