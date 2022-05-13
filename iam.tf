@@ -25,7 +25,7 @@ resource "aws_iam_role" "test_role" {
   "Statement": {
     "Effect": "Allow",
     "Action": "iam:*AccessKey*",
-    "Resource": "arn:aws:iam::792820380616:user/${aws:username}"
+    "Resource": "arn:aws:iam::792820380616:user/$aws:username"
   }
 }
   ]
