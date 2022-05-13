@@ -42,7 +42,6 @@ resource "aws_iam_role_policy" "test_policy" {
     {
       "Action": [
         "s3:*"
-        "ec2:*"
       ],
       "Effect": "Allow",
       "Resource": "*"
