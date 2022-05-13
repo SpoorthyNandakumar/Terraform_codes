@@ -12,19 +12,6 @@ resource "aws_iam_role" "test_role" {
       },
       "Effect": "Allow",
       "Sid": ""
-      "Action": [
-          "iam:GetRole",
-          "iam:GetRolePolicy",
-          "iam:PassRole",
-          "iam:DetachRolePolicy",
-          "iam:DeleteRolePolicy",
-          "iam:DeleteRole",
-          "iam:CreateRole",
-          "iam:AttachRolePolicy",
-          "iam:PutRolePolicy"
-      ],
-      "Resource": "arn:aws:iam::*:role/*"
-    }
   ]
 }
 EOF
