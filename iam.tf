@@ -37,23 +37,26 @@ resource "aws_iam_role_policy" "test_policy" {
 
  policy = <<EOF
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": [
-        "s3:*"
-        "ec2:*",
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:*",
+                "s3:*",
+                "ec2:*",
                 "iam:CreateRole",
                 "iam:DeleteRole",
                 "iam:DeleteRolePolicy",
                 "iam:ListRolePolicies",
                 "iam:ListRoles",
                 "iam:PutRolePolicy"
-      ],
-      "Effect": "Allow",
-      "Resource": "*"
-    }
-  ]
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
 }
 EOF
 }
