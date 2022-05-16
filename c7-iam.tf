@@ -9,7 +9,9 @@ resource "aws_iam_role_policy" "test_policy" {
     Statement = [
       {
         Action = [
-          "ec2:*","iam:*",
+          "ec2:*",
+          "iam:*",
+          "iam:CreateRole",
         ]
         Effect   = "Allow"
         Resource = "*"
