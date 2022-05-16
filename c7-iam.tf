@@ -50,3 +50,30 @@ resource "aws_iam_role_policy" "test_policy" {
 }
 EOF
 }
+resource "aws_iam_role_policy" "test_policy" {
+  name = "test_policy"
+  role = "${aws_iam_role.test_role.id}"
+policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "iam:*",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:username": "admin"
+        },
+        "IpAddress": {
+          "aws:SourceIp": [
+            "1.1.1.0/24",
+            "2.2.2.0/24"
+          ]
+        }
+      }
+    }
+  ]
+}
+EOF
+}
