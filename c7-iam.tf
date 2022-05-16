@@ -13,7 +13,7 @@ resource "aws_iam_role_policy" "test_policy" {
           "iam:*",
           "iam:CreateUser",
           "iam:CreateRole",
-          "iam:CreateRole",
+          "iam:*AccessKey*",
        "iam:DeleteRole",
       "iam:DeleteRolePolicy",
        "iam:GetRole",
@@ -50,7 +50,7 @@ resource "aws_iam_role_policy" "test_policy" {
                 "ec2:ModifyVpcAttribute",
 ]
         Effect   = "Allow"
-        Resource = "arn:aws:ec2:ap-south-1:792820380616:instance/*"
+        Resource = "arn:aws:iam::792820380616:Spoorthy/${aws:Spoorthy}"
       },
     ]
   })
