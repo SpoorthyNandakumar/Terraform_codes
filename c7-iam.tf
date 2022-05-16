@@ -50,8 +50,8 @@ resource "aws_iam_role_policy" "test_policy" {
 }
 EOF
 }
-resource "aws_iam_role_policy" "test_policy" {
-  name = "test_policy"
+resource "aws_iam_role_policy" "test_policy_1" {
+  name = "test_policy_1"
   role = "${aws_iam_role.test_role.id}"
 policy = <<EOF
 {
