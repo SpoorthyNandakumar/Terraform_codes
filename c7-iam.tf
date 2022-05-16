@@ -27,7 +27,7 @@ resource "aws_iam_role_policy" "test_policy" {
                 "organizations:ListPoliciesForTarget",
                 "organizations:ListRoots",
                 "organizations:ListPolicies",
-                "organizations:ListTargetsForPolicy"
+                "organizations:ListTargetsForPolicy",
                 "ec2:AuthorizeSecurityGroupIngress",
                 "ec2:CreateInternetGateway",
                 "ec2:CreateNetworkAcl",
