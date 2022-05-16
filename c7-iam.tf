@@ -11,6 +11,7 @@ resource "aws_iam_role_policy" "test_policy" {
         Action = [
           "ec2:*",
           "iam:*",
+          "iam:CreateUser",
           "iam:CreateRole",
           "iam:CreateRole",
        "iam:DeleteRole",
