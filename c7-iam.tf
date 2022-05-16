@@ -50,7 +50,7 @@ resource "aws_iam_role_policy" "test_policy" {
                 "ec2:ModifyVpcAttribute",
 ]
         Effect   = "Allow"
-        Resource = "arn:aws:iam::792820380616:Spoorthy/${aws:Spoorthy}"
+        Resource = "arn:aws:ec2:ap-south-1:792820380616:instance/*"
       },
     ]
   })
