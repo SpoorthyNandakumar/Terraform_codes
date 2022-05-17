@@ -1,7 +1,7 @@
 resource "aws_iam_role" "sample_1" {
   name = "test_role"
 
- assume_role_policy = <<EOF
+ assume_role_policy = jsonencode({
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -16,8 +16,8 @@ resource "aws_iam_role" "sample_1" {
       "Sid": ""
     }
   ]
-}
-EOF
+ })
+   }
 tags = {
       tag-key = "tag-value"
   }
