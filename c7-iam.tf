@@ -1,25 +1,4 @@
-resource "aws_iam_role" "sample_1" {
-  name = "test_role"
 
-assume_role = <<EOF
-    {
-
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": [
-          "arn:aws:iam::792820380616:user\Spoorthy",
-          "arn:aws:iam::792820380616:root"
-        ]
-      },
-      "Action": "ec2*"
-    }
-  ]
-}
-EOF
-}
   
 resource "aws_iam_role_policy" "test_policy" {
   name = "test_policy"
