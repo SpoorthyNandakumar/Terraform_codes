@@ -6,8 +6,7 @@ resource "aws_iam_role" "test_role" {
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Action": "sts:*"
-                "sts:AssumeRole",
+      "Action": "sts:*",
       "Principal": {
        "AWS": "arn:aws:iam::792820380616:user/Spoorthy"
         "Service": "ec2.amazonaws.com"
