@@ -71,4 +71,6 @@ variable "key_name" {
   default     = "mumbaiKP"
 }
 
-
+variable "aws_iam_role" {
+  default = "sample_1"
+}
