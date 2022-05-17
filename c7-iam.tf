@@ -1,7 +1,7 @@
 resource "aws_iam_role" "sample_1" {
   name = "test_role"
 
-policy = <<EOF
+role = <<EOF
     {
 
   "Version": "2012-10-17",
