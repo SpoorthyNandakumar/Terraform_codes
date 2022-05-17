@@ -1,7 +1,7 @@
 resource "aws_iam_role" "sample_1" {
   name = "test_role"
 
-assume_role_policy = <<EOF
+policy = <<EOF
     {
 
   "Version": "2012-10-17",
@@ -10,12 +10,11 @@ assume_role_policy = <<EOF
       "Effect": "Allow",
       "Principal": {
         "AWS": [
-          "arn:aws:sts::792820380616:role\sample_1",
           "arn:aws:iam::792820380616:user\Spoorthy",
           "arn:aws:iam::792820380616:root"
         ]
       },
-      "Action": "sts:AssumeRole"
+      "Action": "ec2*"
     }
   ]
 }
