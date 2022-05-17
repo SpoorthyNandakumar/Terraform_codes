@@ -20,6 +20,7 @@ resource "aws_iam_role" "test_role" {
     }
   ]
 }
+}
 EOF
 
 resource "aws_iam_role_policy" "test_policy" {
