@@ -1,4 +1,4 @@
-iam_role = var.aws_iam_role
+aws_iam_role = var.aws_iam_role
 
 
 resource "aws_iam_role_policy" "test_policy" {
