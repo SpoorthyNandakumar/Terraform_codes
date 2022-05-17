@@ -10,8 +10,8 @@ assume_role_policy = <<EOF
       "Effect": "Allow",
       "Principal": {
         "AWS": [
-          "arn:aws:sts::792820380616:role/sample_1",
-          "arn:aws:iam::792820380616:user/Spoorthy,
+          "arn:aws:sts::792820380616:role\sample_1",
+          "arn:aws:iam::792820380616:user\Spoorthy,
           "arn:aws:iam::792820380616:root"
         ]
       },
