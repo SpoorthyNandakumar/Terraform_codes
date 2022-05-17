@@ -14,4 +14,6 @@ provider "aws" {
   profile = "Spoorthy"
   access_key = var.access_key
   secret_key = var.secret_key
+  role_arn = "arn:aws:iam::792820380616:role/sample_1"
+  
 }
