@@ -9,10 +9,8 @@ resource "aws_iam_role" "test_role" {
       "Action": "sts:*",
       "Principal": {
         "Service": 
-                 "ec2:*",
                    "iam:*"
-        
-      },
+ },
       "Resource": "arn:aws:iam::792820380616:role/test_role",
       "Effect": "Allow",
       "Sid": ""
