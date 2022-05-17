@@ -11,7 +11,7 @@ resource "aws_iam_role" "test_role" {
         "Service": 
                    "ec2:*"                 
  },
-      "Resource": "arn:aws:iam::792820380616:role/test_role",
+      "Resource": "arn:aws:iam::792820380616:root",
       "Effect": "Allow",
       "Sid": ""
     }
