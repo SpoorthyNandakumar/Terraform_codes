@@ -12,9 +12,9 @@ resource "aws_iam_role" "test_role" {
        "AWS": "arn:aws:iam::792820380616:user/Spoorthy"
         "Service": "ec2.amazonaws.com"
       },
-      "Resource": [
+      "Resource": {
                 "*"
-                 ]
+      }
       "Effect": "Allow",
       "Sid": ""
     }
