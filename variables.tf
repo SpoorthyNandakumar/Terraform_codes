@@ -74,3 +74,7 @@ variable "key_name" {
 variable "aws_iam_role" {
   default = "sample_1"
 }
+
+variable "aws_role_arn" {
+  role_arn = "arn:aws:iam::792820380616:role/sample_1"
+}
