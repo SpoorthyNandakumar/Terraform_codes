@@ -7,7 +7,6 @@ assume_role_policy = jsonencode({
       {
         Action = "sts:*","sts:AssumeRole",
         Effect = "Allow"
-        Sid    = ""
         Principal = {
          "AWS": [
           "arn:aws:sts::792820380616:role/sample_1",
