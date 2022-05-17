@@ -12,16 +12,16 @@ resource "aws_iam_role" "test_role" {
        "AWS": "arn:aws:iam::792820380616:user/Spoorthy"
         "Service": "ec2.amazonaws.com"
       },
-      "Resource": {
-                "*"
-      },
       "Effect": "Allow",
       "Sid": ""
     }
   ]
 }
-}
 EOF
+tags = {
+      tag-key = "tag-value"
+  }
+}
 
 resource "aws_iam_role_policy" "test_policy" {
   name = "test_policy"
