@@ -17,7 +17,7 @@ resource "aws_iam_role" "sample_1" {
     }
   ]
  })
-   }
+   
 tags = {
       tag-key = "tag-value"
   }
