@@ -1,4 +1,4 @@
-resource "aws_iam_role" "test_role" {
+resource "aws_iam_role" "sample_1" {
   name = "test_role"
 
  assume_role_policy = <<EOF
@@ -11,7 +11,7 @@ resource "aws_iam_role" "test_role" {
         "Service": 
                    "ec2:*"                 
  },
-      "Resource": "arn:aws:iam::792820380616:root",
+      "Resource": "arn:aws:iam::792820380616:role/sample_1",
       "Effect": "Allow",
       "Sid": ""
     }
@@ -25,11 +25,11 @@ tags = {
 
 resource "aws_iam_role_policy" "test_policy" {
   name = "test_policy"
-  role = "${aws_iam_role.test_role.id}"
+  role = "${aws_iam_role.sample_1.id}"
 
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
-  policy = jsonencode({
+  policy = <<EOF{
     Version = "2012-10-17"
     Statement = [
       {
@@ -48,13 +48,14 @@ resource "aws_iam_role_policy" "test_policy" {
         Effect   = "Allow"
         Resource = "*"
       },
-    ]
-  })
+   ]
+    EOF
+  }
 }
 
 
 resource "aws_iam_instance_profile" "test_profile" {
   name = "test_profile"
-  role = "${aws_iam_role.test_role.name}"
+  role = "${aws_iam_role.sample_1.name}"
 }
 
