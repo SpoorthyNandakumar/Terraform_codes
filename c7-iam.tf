@@ -1,28 +1,26 @@
 resource "aws_iam_role" "sample_1" {
   name = "test_role"
 
- assume_role_policy = jsonencode({
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": "sts:*",
-      "Principal": {
-        "Service": 
-                   "ec2:*"                 
- },
-      "Resource": "arn:aws:iam::792820380616:role/sample_1",
-      "Effect": "Allow",
-      "Sid": ""
-    }
-  ]
- })
-   
-tags = {
-      tag-key = "tag-value"
-  }
+assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = "sts:*","sts:AssumeRole",
+        Effect = "Allow"
+        Sid    = ""
+        Principal = {
+         "AWS": [
+          "arn:aws:sts::792820380616:role/sample_1",
+          "arn:aws:iam::792820380616:user/Spoorthy,
+          "arn:aws:iam::792820380616:root"
+        ]
+        }
+      },
+    ]
+  })
 }
 
+  
 resource "aws_iam_role_policy" "test_policy" {
   name = "test_policy"
   role = "${aws_iam_role.sample_1.id}"
