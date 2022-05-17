@@ -27,9 +27,9 @@ resource "aws_iam_role_policy" "test_policy" {
   name = "test_policy"
   role = "${aws_iam_role.sample_1.id}"
 
-  # Terraform's "jsonencode" function converts a
+   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
-  policy = <<EOF{
+  policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
       {
@@ -39,8 +39,6 @@ resource "aws_iam_role_policy" "test_policy" {
           "iam:CreateUser",
           "iam:CreateRole",
           "iam:*AccessKey*",
-       "iam:DeleteRole",
-      "iam:DeleteRolePolicy",
        "iam:GetRole",
        "iam:PassRole",
        "iam:PutRolePolicy",
@@ -48,9 +46,8 @@ resource "aws_iam_role_policy" "test_policy" {
         Effect   = "Allow"
         Resource = "*"
       },
-   ]
-    EOF
-  }
+    ]
+  })
 }
 
 
