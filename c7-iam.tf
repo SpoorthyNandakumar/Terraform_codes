@@ -20,7 +20,7 @@ assume_role_policy = <<EOF
   ]
 }
 EOF
-
+}
   
 resource "aws_iam_role_policy" "test_policy" {
   name = "test_policy"
