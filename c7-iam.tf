@@ -8,7 +8,7 @@ resource "aws_iam_role" "test_role" {
     {
       "Action": "sts:*",
       "Principal": {
-       "AWS": "arn:aws:iam::792820380616:user/Spoorthy"
+       "AWS": "arn:aws:iam::792820380616:user/Spoorthy",
         "Service": "ec2.amazonaws.com"
       },
       "Effect": "Allow",
