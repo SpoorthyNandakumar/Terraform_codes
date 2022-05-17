@@ -32,14 +32,9 @@ variable "public-subnet-2-cidr" {
 variable "ami-Practice1" {
   description = "ID of AMI to use for the instance"
   type        = string
-  default     = "ami-09ed03e97033b6d21"
+  default     = "ami-0509f816fdd94dec7"
 }
 
-variable "ami-Practice2" {
-  description = "ID of AMI to use for the instance"
-  type        = string
-  default     = "ami-0d2aa5df6e106903e"
-}
 
 variable "instance_type" {
   description = "The type of instance to start"
