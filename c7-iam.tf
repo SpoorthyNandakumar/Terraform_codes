@@ -2,7 +2,7 @@
   
 resource "aws_iam_role_policy" "test_policy" {
   name = "test_policy"
-  role = "${var.aws_iam_role.sample_1.id}"
+  role = "{var.aws_iam_role.sample_1.id}"
 
    # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
@@ -30,6 +30,6 @@ resource "aws_iam_role_policy" "test_policy" {
 
 resource "aws_iam_instance_profile" "test_profile" {
   name = "test_profile"
-  role = "${var.aws_iam_role.sample_1.name}"
+  role = "{var.aws_iam_role.sample_1.name}"
 }
 
