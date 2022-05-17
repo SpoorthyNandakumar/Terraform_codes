@@ -9,7 +9,7 @@ resource "aws_iam_role" "test_role" {
       "Action": "sts:*",
       "Principal": {
         "Service": [
-                 "ec2:*"
+                 "ec2:*",
                    "iam:*",
           ]
       },
