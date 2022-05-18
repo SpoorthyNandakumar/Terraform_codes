@@ -70,3 +70,6 @@ variable "aws_iam_role" {
   default = "sample_1"
 }
 
+variable "iam_instance_profile" {
+  default = "sample_1"
+}
