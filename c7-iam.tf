@@ -6,16 +6,20 @@ resource "aws_iam_role" "test_role" {
   "Version": "2012-10-17",
   "Statement": [
     {
+       sid = ""
+    effect = "Allow"
       "Action": [
         "iam:CreateRole",
         "iam:AttachRolePolicy",
         "iam:PassRole",
-        "ec2:*"
+        "ec2:*",
+        "sts:AssumeRole"
         ],
       "Principal": {
-        "Service": "ec2.amazonaws.com"
+        type        = "Service"
+        identifiers = ["ec2.amazonaws.com"]
       },
-      "Effect": "Allow",
+     
       "Resource":"*"
 
     }
