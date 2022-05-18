@@ -16,7 +16,7 @@ resource "aws_iam_role" "test_role" {
         "sts:AssumeRole"
         ],
       "Principal": {
-        "type"        :"Service"
+        "type"        :"Service",
         "identifiers" : ["ec2.amazonaws.com"]
       },
      
