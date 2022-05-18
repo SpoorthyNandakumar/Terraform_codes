@@ -18,4 +18,4 @@ provider "aws" {
     role_arn = "arn:aws:iam::<792820380616>:role/<sample_1>"
   }
 }
-  }
+  
